@@ -1,0 +1,32 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "keywords": [
+    "ReactJs",
+    "SASS",
+    "NodeJs",
+    "Express",
+    "MongoDB",
+    "MERN",
+    "Blog",
+    "Portfolio"
+  ],
+  "author": "Gustavo Quinta - MoonTory",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "helmet": "^3.14.0",
+    "mongoose": "^5.3.6"
+  }
+}
