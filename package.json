@@ -4,8 +4,8 @@
   "description": "Personal portfolio website",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon ."
+    "start": "node -r esm server/.",
+    "dev": "nodemon -r esm server/."
   },
   "keywords": [
     "ReactJs",
@@ -25,6 +25,7 @@
     "nodemon": "^1.18.4"
   },
   "dependencies": {
+    "esm": "^3.0.84",
     "express": "^4.16.4",
     "helmet": "^3.14.0",
     "mongoose": "^5.3.6"

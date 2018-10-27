@@ -1,10 +1,3 @@
-const express = require('express');
-const router = express.Router();
+import indexRouter from './Index';
 
-router.get('/', (req, res, next) => {
-  res.status(200).json({
-    message: 'Handling GET requests to / (index)'
-  });
-});
-
-module.exports = router;
+export { indexRouter };

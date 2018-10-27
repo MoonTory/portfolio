@@ -1,25 +1,7 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const app = express();
+import http from 'http';
+import app from './app';
 
-const indexRoute = require('./api/routes/index');
+const port = process.env.PORT || 5000;
+const server = http.createServer(app);
 
-// Helmet Middleware
-app.use(helmet());
-
-// Bodyparser Middleware
-app.use(express.json());
-
-// DB Config
-const db = require('./config/keys').mongoURI;
-
-app.use('/', indexRoute);
-
-// Connect to MongoDB
-mongoose.connect(db, { useNewUrlParser: true })
-  .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.log(err));
-
-module.exports = app;
+server.listen(port, () => console.log(`API has Started @ http://localhost:${port}`));
