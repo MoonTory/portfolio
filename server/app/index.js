@@ -27,9 +27,7 @@ const db = require('../config/keys').mongoURI;
 
 // - Routing - //
 app.use('/', indexRouter);
-  // Error Handling
-  app.use(errorHandler);
-  app.use(errorLog);
+
 // Connect to MongoDB
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected...'))
