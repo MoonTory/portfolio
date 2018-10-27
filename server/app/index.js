@@ -3,6 +3,7 @@ import express, { urlencoded, json } from 'express';
 import mongoose from 'mongoose';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import { errorHandler, errorLog } from '../utils';
 
 // Route Imports
 import { indexRouter } from '../api/routes';
@@ -26,10 +27,16 @@ const db = require('../config/keys').mongoURI;
 
 // - Routing - //
 app.use('/', indexRouter);
-
+  // Error Handling
+  app.use(errorHandler);
+  app.use(errorLog);
 // Connect to MongoDB
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
+
+  // Error Handling
+  app.use(errorHandler);
+  app.use(errorLog);
 
 export default app;
